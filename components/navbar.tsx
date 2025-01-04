@@ -1,10 +1,15 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { Input } from "./ui/input";
-import { Search } from "lucide-react";
+import { EyeClosed, Search } from "lucide-react";
+import { Sheet } from "./ui/sheet";
 import { Button } from "./ui/button";
+import { SheetTitle, SheetTrigger, SheetContent } from "./ui/sheet";
+import Sidebar from "./sidebar";
 
-export default function Navbar() {
+export default function Navbar({ recentSearch }: { recentSearch?: any[] }) {
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   return (
     <nav className="relative w-full">
       <div className="w-full flex justify-between items-center gap-12  md:px-[32px] py-5 border-b-0 md:border-b border-white/5">
@@ -62,9 +67,11 @@ export default function Navbar() {
         </div>
       </div>
       <div className="w-full flex justify-between items-center md:hidden gap-6 py-5 md:border-b-0 ">
-        <Button size="icon" className="cusor-pointer">
-          <Image alt="menu" src="/menu.svg" width={30} height={30} />
-        </Button>
+        <MobileNav
+          isDrawerOpen={isDrawerOpen}
+          setIsDrawerOpen={setIsDrawerOpen}
+          recentSearch={recentSearch}
+        />{" "}
         <div className="relative  md:hidden flex w-full ">
           <Search className="absolute left-2 top-[14px]" size={16} />
           <Input
@@ -74,5 +81,29 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+  );
+}
+
+function MobileNav({
+  isDrawerOpen,
+  setIsDrawerOpen,
+  recentSearch,
+}: {
+  setIsDrawerOpen: (isDrawerOpen: boolean) => void;
+  isDrawerOpen: boolean;
+  recentSearch?: any[];
+}) {
+  return (
+    <Sheet open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
+      <SheetTitle className="hidden"></SheetTitle>
+      <SheetTrigger asChild className="lg:hidden">
+        <Button size="icon" className="cusor-pointer">
+          <Image alt="menu" src="/menu.svg" width={30} height={30} />
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="left" className="bg-[#11161E]">
+        <Sidebar />
+      </SheetContent>
+    </Sheet>
   );
 }

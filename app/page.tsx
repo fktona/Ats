@@ -107,11 +107,11 @@ For more information and updates, you can follow Thena Network's official social
   return (
     <div className="w-full relative lg:px-[42px] px-5 h-svh flex flex-col overflow-x-hidden">
       <div className="bg-[#9559f526] w-1/2 h-full absolute md:-right-[5%] -right-[20%]  rounded-[1573px] blur-[310px] " />
-      <Navbar />
+      <Navbar recentSearch={recentSearch} />
       <div className="w-full  md:grid lg:grid-cols-6 md:grid-cols-4 relative grow overflow-hidden  gap-2 mt-6">
         <Sidebar
           recentSearch={recentSearch}
-          className="absolute  w-[187px] lg:w-[209px] h-full lg:relative max-h-[90%] hidden lg:flex overflow-y-auto"
+          className="absolute  w-[187px] lg:w-[209px] h-full lg:relative max-h-[90%] lg:flex overflow-y-auto"
         />
 
         <div className="col-span-4  flex h-full    w-full relative overflow-y-auto   items-center no-scrollbar  flex-col  md:justify-between justify-start">
