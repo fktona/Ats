@@ -80,13 +80,8 @@ export default function Home() {
 
     const newMessage = {
       userMsg: inputValue,
-      botMsg: `Thena Network (THENA) is an open-source blockchain platform designed to provide developers with tools to create, grow, and enhance their projects and infrastructure.
-CoinAlpha Launched on January 2, 2025, on the Solana blockchain, the token's contract address is 5ZxotRXB6edrdVXUCC8Ed7RF2FvZAqd1s6c1SW34pump.
-Top 100 Token As of January 3, 2025, THENA is trading at approximately $0.001797, with a market capitalization of around $1.8 million and liquidity of $212,381.
-Top 100 Token The token has experienced significant price volatility, with a reported increase of 1,737% in the last 24 hours.
-Coinboom THENA is available for trading on decentralized exchanges such as Raydium, following its migration from the bonding curve.
-Photon Sol For real-time trading data, platforms like Bybit's Web3 DEX Pro offer live on-chain swap information for Thena.
-For more information and updates, you can follow Thena Network's official social media channels.`,
+      botMsg:
+        "Thena Network (THENA) is an open-source blockchain platform designed to provide developers with tools to create, grow, and enhance their projects and infrastructure.CoinAlpha Launched on January 2, 2025, on the Solana blockchain, the token's contract address is 5ZxotRXB6edrdVXUCC8Ed7RF2FvZAqd1s6c1SW34pump.Top 100 Token As of January 3, 2025, THENA is trading at approximately $0.001797, with a market capitalization of around $1.8 million and liquidity of $212,381",
     };
 
     setMessages((prevMessages) => [...prevMessages, newMessage]);
@@ -111,7 +106,10 @@ For more information and updates, you can follow Thena Network's official social
       <div className="w-full  md:grid lg:grid-cols-6 md:grid-cols-4 relative grow overflow-hidden  gap-2 mt-6">
         <Sidebar
           recentSearch={recentSearch}
-          className="absolute  w-[187px] lg:w-[209px] h-full lg:relative max-h-[90%] lg:flex overflow-y-auto"
+          className={cn(
+            "absolute  w-[187px] lg:w-[209px] h-full lg:relative max-h-[90%] lg:flex overflow-y-auto",
+            !openSection && "hidden lg:flex"
+          )}
         />
 
         <div className="col-span-4  flex h-full    w-full relative overflow-y-auto   items-center no-scrollbar  flex-col  md:justify-between justify-start">
