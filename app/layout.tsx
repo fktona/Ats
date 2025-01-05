@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${random.variable} ${inter.variable} antialiased bg-[#11161E] relative  max-w-screen-2xl mx-auto`}
+        className={`${random.variable} ${inter.variable} antialiased bg-[#11161E] relative mx-auto`}
       >
         {children}
       </body>

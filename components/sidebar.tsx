@@ -5,9 +5,11 @@ import { cn } from "@/lib/utils";
 export default function Sidebar({
   className,
   recentSearch,
+  isLoading,
 }: {
   className?: string;
   recentSearch?: any[];
+  isLoading?: boolean;
 }) {
   const [visibleBadges, setVisibleBadges] = useState(0);
 
@@ -30,9 +32,10 @@ export default function Sidebar({
       ? recentSearch?.slice(0, visibleBadges)
       : recentSearch;
   return (
-    <div className={cn("flex flex-col gap-3 w-full", className)}>
+    <div className={cn("flex flex-col opacity-50 gap-3 w-full", className)}>
       {Array.from({ length: visibleBadges - 2 }).map((_, index) => (
         <Badge
+          isLoading={isLoading}
           key={index}
           text={modifyRecentSearch?.[index]?.text}
           src={modifyRecentSearch?.[index]?.src}

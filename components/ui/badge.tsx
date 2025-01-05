@@ -4,16 +4,19 @@ export function Badge({
   text,
   src,
   className,
+  isLoading,
 }: {
   text?: string;
   src?: string;
   className?: string;
+  isLoading?: boolean;
 }) {
   return (
     <div
       className={cn(
         "flex items-center px-2 w-full bg-white/5 h-[43px] text-[16px] max-w-[210px] rounded-full space-x-2 ",
-        className
+        className,
+        isLoading && " animate-pulse"
       )}
     >
       {src ? (

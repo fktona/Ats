@@ -56,13 +56,15 @@ export default function Navbar({ recentSearch }: { recentSearch?: any[] }) {
             asChild
             className="bg-white/20 p-2 rounded-full z-20 relative cursor-pointer hover:bg-white/30 transition-colors duration-150"
           >
-            <Image
-              alt="pump fun"
-              src="/pump.svg"
-              width={25}
-              height={25}
-              className="w-8 h-8 relative cusor-pointer"
-            />
+            <a href={"https://ats-agent.onrender.com/scanner"} target="_blank">
+              <Image
+                alt="pump fun"
+                src="/pump.svg"
+                width={25}
+                height={25}
+                className="w-8 h-8 relative cusor-pointer"
+              />
+            </a>
           </Button>
         </div>
       </div>
@@ -71,7 +73,7 @@ export default function Navbar({ recentSearch }: { recentSearch?: any[] }) {
           isDrawerOpen={isDrawerOpen}
           setIsDrawerOpen={setIsDrawerOpen}
           recentSearch={recentSearch}
-        />{" "}
+        />
         <div className="relative  md:hidden flex w-full ">
           <Search className="absolute left-2 top-[14px]" size={16} />
           <Input
@@ -102,7 +104,10 @@ function MobileNav({
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="bg-[#11161E]">
-        <Sidebar />
+        <h2 className="font-bold flex flex-col font-random text-[30px] text-white">
+          Recent Searches
+        </h2>
+        <Sidebar recentSearch={recentSearch} />
       </SheetContent>
     </Sheet>
   );
