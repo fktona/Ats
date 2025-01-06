@@ -48,13 +48,15 @@ export default function Navbar({
             asChild
             className="bg-white/20 p-2 rounded-full cursor-pointer hover:bg-white/30 transition-colors duration-150"
           >
-            <Image
-              alt="x"
-              src="/x.svg"
-              width={25}
-              height={25}
-              className="w-8 h-8 relative "
-            />
+            <a href={"https://x.com/atsagent"} target="_blank">
+              <Image
+                alt="x"
+                src="/x.svg"
+                width={25}
+                height={25}
+                className="w-8 h-8 relative "
+              />
+            </a>
           </Button>
           <Button
             size={"icon"}
@@ -62,15 +64,13 @@ export default function Navbar({
             asChild
             className="bg-white/20 p-2 rounded-full z-20 relative cursor-pointer hover:bg-white/30 transition-colors duration-150"
           >
-            <a href={"https://ats-agent.onrender.com/scanner"} target="_blank">
-              <Image
-                alt="pump fun"
-                src="/pump.svg"
-                width={25}
-                height={25}
-                className="w-8 h-8 relative cusor-pointer"
-              />
-            </a>
+            <Image
+              alt="pump fun"
+              src="/pump.svg"
+              width={25}
+              height={25}
+              className="w-8 h-8 relative cusor-pointer"
+            />
           </Button>
         </div>
       </div>
