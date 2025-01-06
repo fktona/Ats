@@ -137,7 +137,7 @@ export default function ATS() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full flex  md:items-center items-start mt-10  max-w-screen-2xl  md:grow justify-center md:gap-2 gap-10 flex-col"
+            className="w-full flex  md:items-center  mx-auto items-start mt-10   md:grow justify-center md:gap-2 gap-10 flex-col"
           >
             <div className="w-full md:flex hidden px-20 items-center justify-between md:scale-90">
               <button onClick={() => setInputValue(FeaturedCoins[0].ca)}>
@@ -225,7 +225,7 @@ export default function ATS() {
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="w-full  md:grid lg:grid-cols-8 md:grid-cols-4 relative grow overflow-hidden    gap-2 mt-6">
+      <div className="w-full  md:grid lg:grid-cols-8 md:grid-cols-4 relative grow overflow-hidden  place-content-center place-items-center   gap-2 mt-6">
         <Sidebar
           type="about"
           recentSearch={recentSearch}
@@ -309,7 +309,7 @@ export default function ATS() {
           type="roadmap"
           recentSearch={recentSearch}
           className={cn(
-            "w-[187px] lg:w-[309px]  h-full hidden no-scrollbar opacity-0 transition-all duration-200 lg:relative col-span-2 max-h-[90%] lg:flex overflow-y-auto",
+            "w-[187px] lg:w-[309px]  h-full hidden no-scrollbar opacity-0 col-span-2 transition-all duration-200 lg:relative col-span-2 max-h-[90%] lg:flex overflow-y-auto",
             !openSection && "hidden lg:flex opacity-100"
           )}
         />
@@ -519,7 +519,7 @@ function MsgContainer({
                   </span>
                   <span>Symbol: {botMsg?.tokenDetails.tokenSymbol}</span>
                   <span>
-                    Maeket Cap:
+                    Market Cap:
                     {
                       botMsg?.AIresponse.ValueAndMarketCapitalization
                         ?.marketCapitalization
