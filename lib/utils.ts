@@ -12,7 +12,7 @@ type TokenDetails = {
   decimals: string;
   exchangeName: string;
   pairLabel: string;
-  usdPrice: number;
+  price: number;
   marketCap: number;
   isHoneyPot: string;
 };

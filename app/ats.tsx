@@ -513,7 +513,7 @@ function MsgContainer({
                   Value and market capitalization:
                 </h2>
                 <div className="flex flex-wrap gap-2">
-                  <span>Price: {botMsg?.tokenDetails?.usdPrice}</span>
+                  <span>Price: {botMsg?.tokenDetails?.price}</span>
                   <span>Symbol: {botMsg?.tokenDetails?.tokenSymbol}</span>
                   <span>
                     Market Cap:
