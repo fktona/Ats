@@ -351,7 +351,7 @@ function MsgContainer({
         initial={{ scale: 0.9 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.3 }}
-        className="bg-[#FF91914D]/70 p-4 rounded-2xl border border-white/5 overflow-hidden"
+        className="bg-[#FF91914D]/70 p-4 rounded-2xl my-4 border border-white/5 overflow-hidden"
       >
         <h2 className="font-bold text-xl my-2">Error:</h2>
         <span className="text-white/90 text-sm break-words leading-relaxed">
@@ -520,10 +520,7 @@ function MsgContainer({
                   <span>Symbol: {botMsg?.tokenDetails.tokenSymbol}</span>
                   <span>
                     Market Cap:
-                    {
-                      botMsg?.AIresponse?.ValueAndMarketCapitalization
-                        ?.marketCapitalization
-                    }
+                    {botMsg?.tokenDetails?.marketCap}
                   </span>
                 </div>
               </div>

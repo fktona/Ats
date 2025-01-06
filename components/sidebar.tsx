@@ -78,13 +78,16 @@ export const RoadMap = () => {
         Roadmap
       </h2>
       <p className="text-[14px] font-inter leading-[16.9px]">
-        ATS is an agent that is powered by OpenAI & Solscan to provide
-        efficiency to traders on the Solana block-chain, allowing users to
-        receive real-time insight to streamline their trading experience.
+        We will launch our $ATS token, the developer wallet will hold 5% of
+        supply which will be locked for 1 year with weekly unlocks of a small %
+        to fund team salaries and funding for API's. We will take in community
+        feedback and push to release a v2 with additional community suggested
+        features. We will also continue to do weekly updates to provide the most
+        enhanced research for users.
       </p>
-      <div className="h-[74px] relative w-full">
+      {/* <div className="h-[74px] relative w-full">
         <Image src="/side.png" alt="ATS Logo" fill className="object-cover" />
-      </div>
+      </div> */}
     </div>
   );
 };
