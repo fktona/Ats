@@ -2,14 +2,18 @@
 import React, { useState, useEffect } from "react";
 import { Badge } from "./ui/badge";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { motion } from "framer-motion";
 export default function Sidebar({
   className,
   recentSearch,
   isLoading,
+  type,
 }: {
   className?: string;
   recentSearch?: any[];
   isLoading?: boolean;
+  type?: "about" | "roadmap";
 }) {
   const [visibleBadges, setVisibleBadges] = useState(0);
 
@@ -32,15 +36,55 @@ export default function Sidebar({
       ? recentSearch?.slice(0, visibleBadges)
       : recentSearch;
   return (
-    <div className={cn("flex flex-col opacity-50 gap-3 w-full", className)}>
-      {Array.from({ length: visibleBadges - 2 }).map((_, index) => (
+    <motion.div
+      className={cn("flex font-inter flex-col gap-3 w-full", className)}
+    >
+      {/* {Array.from({ length: visibleBadges - 2 }).map((_, index) => (
         <Badge
           isLoading={isLoading}
           key={index}
           text={modifyRecentSearch?.[index]?.text}
           src={modifyRecentSearch?.[index]?.src}
         />
-      ))}
-    </div>
+      ))} */}
+      {type === "about" && <About />}
+      {type === "roadmap" && <RoadMap />}
+    </motion.div>
   );
 }
+
+export const About = () => {
+  return (
+    <div className="flex relative flex-col gap-4 w-full min-w-[286px] px-[16px] py-[10px] rounded-md bg-[#1B1F27]">
+      <h2 className="text-[#D6FF00] text-[18px] md:text-[22px] font-inter font-bold">
+        About ATS
+      </h2>
+      <p className="text-[14px] font-inter leading-[16.9px]">
+        ATS is an agent that is powered by OpenAI & Solscan to provide
+        efficiency to traders on the Solana block-chain, allowing users to
+        receive real-time insight to streamline their trading experience.
+      </p>
+      <div className="h-[74px] relative w-full">
+        <Image src="/side.png" alt="ATS Logo" fill className="object-cover" />
+      </div>
+    </div>
+  );
+};
+
+export const RoadMap = () => {
+  return (
+    <div className="flex relative flex-col gap-4 w-full px-[16px] min-w-[286px] py-[10px] rounded-md bg-[#1B1F27]">
+      <h2 className="text-[#D6FF00] text-[18px] md:text-[22px] font-inter font-bold">
+        Roadmap
+      </h2>
+      <p className="text-[14px] font-inter leading-[16.9px]">
+        ATS is an agent that is powered by OpenAI & Solscan to provide
+        efficiency to traders on the Solana block-chain, allowing users to
+        receive real-time insight to streamline their trading experience.
+      </p>
+      <div className="h-[74px] relative w-full">
+        <Image src="/side.png" alt="ATS Logo" fill className="object-cover" />
+      </div>
+    </div>
+  );
+};

@@ -108,8 +108,7 @@ export const getTokenInfo = async (
 
     // Return a default structure with error details
     return {
-      AIresponse:
-        "Error Can not process request make sure you enter correct contract Address ",
+      AIresponse: "",
       tokenDetails: {
         tokenName: "",
         tokenSymbol: "",

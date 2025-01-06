@@ -6,9 +6,15 @@ import { EyeClosed, Search } from "lucide-react";
 import { Sheet } from "./ui/sheet";
 import { Button } from "./ui/button";
 import { SheetTitle, SheetTrigger, SheetContent } from "./ui/sheet";
-import Sidebar from "./sidebar";
+import Sidebar, { About, RoadMap } from "./sidebar";
 
-export default function Navbar({ recentSearch }: { recentSearch?: any[] }) {
+export default function Navbar({
+  recentSearch,
+  openSection,
+}: {
+  recentSearch?: any[];
+  openSection: boolean;
+}) {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   return (
     <nav className="relative w-full">
@@ -28,13 +34,13 @@ export default function Navbar({ recentSearch }: { recentSearch?: any[] }) {
             </sub>
           </h2>
         </div>
-        <div className="relative  hidden md:flex grow lg:max-w-[600px] ">
+        {/* <div className="relative  hidden md:flex grow lg:max-w-[600px] ">
           <Search className="absolute left-2 top-[14px]" size={16} />
           <Input
             className=" p-2 pl-8 py-3 rounded-full  bg-white/5 w-full  border border-white/5"
             placeholder="Search"
           />
-        </div>
+        </div> */}
         <div className="flex items-center space-x-2">
           <Button
             size={"icon"}
@@ -68,8 +74,9 @@ export default function Navbar({ recentSearch }: { recentSearch?: any[] }) {
           </Button>
         </div>
       </div>
-      <div className="w-full flex justify-between items-center md:hidden gap-6 py-5 md:border-b-0 ">
-        <MobileNav
+      {!openSection && (
+        <div className="w-full flex overflow-x-auto no-scrollbar justify-between items-center lg:hidden gap-6 py-5 md:border-b-0 ">
+          {/* <MobileNav
           isDrawerOpen={isDrawerOpen}
           setIsDrawerOpen={setIsDrawerOpen}
           recentSearch={recentSearch}
@@ -80,8 +87,11 @@ export default function Navbar({ recentSearch }: { recentSearch?: any[] }) {
             className=" p-2 pl-8 py-2 rounded-full  bg-white/5 w-full  border border-white/5"
             placeholder="Search"
           />
+        </div> */}
+          <About />
+          <RoadMap />
         </div>
-      </div>
+      )}
     </nav>
   );
 }
