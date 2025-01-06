@@ -515,13 +515,13 @@ function MsgContainer({
                 <div className="flex flex-wrap gap-2">
                   <span>
                     Price:{" "}
-                    {botMsg?.AIresponse.ValueAndMarketCapitalization?.price}
+                    {botMsg?.AIresponse?.ValueAndMarketCapitalization?.price}
                   </span>
                   <span>Symbol: {botMsg?.tokenDetails.tokenSymbol}</span>
                   <span>
                     Market Cap:
                     {
-                      botMsg?.AIresponse.ValueAndMarketCapitalization
+                      botMsg?.AIresponse?.ValueAndMarketCapitalization
                         ?.marketCapitalization
                     }
                   </span>
