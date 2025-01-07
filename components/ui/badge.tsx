@@ -14,7 +14,7 @@ export function Badge({
   return (
     <div
       className={cn(
-        "flex items-center px-2 w-full bg-white/5 h-[43px] text-[16px] max-w-[210px] rounded-full space-x-2 ",
+        "flex items-center px-2    whitespace-nowrap w-full bg-white/5 h-[43px] text-[16px] max-w-[220px] rounded-full space-x-2 ",
         className,
         isLoading && " animate-pulse"
       )}

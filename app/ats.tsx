@@ -151,7 +151,7 @@ export default function ATS() {
                 <Badge
                   text={FeaturedCoins[1].name}
                   src={FeaturedCoins[1].src}
-                  className="w-[140px]"
+                  className="w-[150px]"
                 />
               </button>
             </div>
