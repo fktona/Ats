@@ -48,6 +48,22 @@ export default function Navbar({
             asChild
             className="bg-white/20 p-2 rounded-full cursor-pointer hover:bg-white/30 transition-colors duration-150"
           >
+            <a href={"https://t.me/atsagent"} target="_blank">
+              <Image
+                alt="x"
+                src="/telegram.svg"
+                width={25}
+                height={25}
+                className="w-8 h-8 relative "
+              />
+            </a>
+          </Button>
+          <Button
+            size={"icon"}
+            variant={"ghost"}
+            asChild
+            className="bg-white/20 p-2 rounded-full cursor-pointer hover:bg-white/30 transition-colors duration-150"
+          >
             <a href={"https://x.com/atsagent"} target="_blank">
               <Image
                 alt="x"
