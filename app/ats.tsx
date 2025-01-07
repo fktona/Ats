@@ -469,28 +469,29 @@ function MsgContainer({
                   Holders and Distribution:
                 </h2>
                 <ol className="text-[8px]">
-                  {botMsg?.tokenDestribution?.map((holder, i) => (
-                    <li
-                      key={holder.address}
-                      className="flex justify-between text-sm my-2 w-full"
-                    >
-                      <span className="hidden md:block">
-                        {" "}
-                        <span className="mr-2 ">{i + 1}.</span>
-                        {holder?.address}
-                      </span>
+                  {botMsg?.tokenDestribution
+                    ?.sort((a, b) => b.percentage - a.percentage) // Sort in descending order
+                    .map((holder, i) => (
+                      <li
+                        key={holder.address}
+                        className="flex justify-between text-sm my-2 w-full"
+                      >
+                        <span className="hidden md:block">
+                          <span className="mr-2">{i + 1}.</span>
+                          {holder?.address}
+                        </span>
 
-                      <span className=" md:hidden block">
-                        {" "}
-                        <span className="mr-2">{i + 1}.</span>
-                        {formatTokenAddress(holder?.address)}
-                      </span>
-                      <span>{holder?.percentage}%</span>
-                    </li>
-                  ))}
+                        <span className="md:hidden block">
+                          <span className="mr-2">{i + 1}.</span>
+                          {formatTokenAddress(holder?.address)}
+                        </span>
+                        <span>{holder?.percentage}%</span>
+                      </li>
+                    ))}
                 </ol>
               </div>
             </motion.div>
+
             <motion.div
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
