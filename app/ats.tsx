@@ -338,7 +338,7 @@ function MsgContainer({
 
   const formatTokenAddress = (address: string): string => {
     if (address.length <= 10) {
-      return `CA: ${address}`; // No need to shorten if the address is already short
+      return `${address}`; // No need to shorten if the address is already short
     }
 
     const prefix = address.slice(0, 4); // First 4 characters
