@@ -24,9 +24,9 @@ const FeaturedCoins = [
     ca: "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
   },
   {
-    name: "Bonk",
-    src: "/bonk.png",
-    ca: "0x1151CB3d861920e07a38e03eEAd12C32178567F6",
+    name: "OpenAI Agent",
+    src: "/openai.png",
+    ca: "46Ws3CkfBRjtGumCeH3pNrmpyxPmtJgqYpr7WDeaXXoo",
   },
 
   {

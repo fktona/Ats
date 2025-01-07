@@ -60,7 +60,7 @@ export const About = () => {
         About ATS
       </h2>
       <p className="text-[14px] font-inter leading-[16.9px]">
-        ATS is an agent that is powered by OpenAI & Solscan to provide
+        ATS is an agent that is powered by OpenAI & dexscreener to provide
         efficiency to traders on the Solana block-chain, allowing users to
         receive real-time insight to streamline their trading experience.
       </p>
