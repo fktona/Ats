@@ -309,8 +309,8 @@ export default function ATS() {
           type="roadmap"
           recentSearch={recentSearch}
           className={cn(
-            "w-[187px] lg:w-[309px]  h-full hidden no-scrollbar opacity-0 col-span-2 transition-all duration-200 lg:relative col-span-2 max-h-[90%] lg:flex overflow-y-auto",
-            !openSection && "hidden lg:flex opacity-100"
+            "w-[187px] lg:w-[309px]  h-full hidden no-scrollbar opacity-0  transition-all duration-200  delay-500 lg:relative col-span-2 max-h-[90%] lg:flex overflow-y-auto",
+            !openSection && " lg:flex opacity-100"
           )}
         />
       </div>
@@ -502,6 +502,29 @@ function MsgContainer({
                 <Markdown>{`${botMsg?.AIresponse?.Warnings}`}</Markdown>
               </span>
             </motion.div>
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.3 }}
+              className={cn(
+                " p-4 rounded-2xl border border-white/5 overflow-hidden",
+                botMsg?.isContractBundled
+                  ? "bg-[#FF808014]/10"
+                  : "bg-[#80FF8014]/10"
+              )}
+            >
+              <h2 className="font-bold text-xl my-2">Bundling Status:</h2>
+              {!botMsg?.isContractBundled ? (
+                <span className="text-white/90 text-sm break-words leading-relaxed">
+                  <Markdown>{`$${botMsg?.tokenDetails?.tokenSymbol} does not seem to be bundled 🟢🟢🟢🟢🟢`}</Markdown>
+                </span>
+              ) : (
+                <span className="text-white/90 text-sm break-words leading-relaxed">
+                  <Markdown>{`$${botMsg?.tokenDetails?.tokenSymbol} has been bundled 🔴🔴🔴🔴🔴`}</Markdown>
+                </span>
+              )}
+            </motion.div>
+
             <motion.div
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
