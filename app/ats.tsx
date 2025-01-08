@@ -116,12 +116,12 @@ export default function ATS() {
 
   const formatTokenAddress = (address: string): string => {
     if (address.length <= 10) {
-      return `CA: ${address}`; // No need to shorten if the address is already short
+      return `${address}`; // No need to shorten if the address is already short
     }
 
     const prefix = address.slice(0, 4); // First 4 characters
     const suffix = address.slice(-8); // Last 8 characters
-    return `CA: ${prefix}....${suffix}`;
+    return `${prefix}....${suffix}`;
   };
 
   return (
@@ -343,7 +343,7 @@ function MsgContainer({
 
     const prefix = address.slice(0, 4); // First 4 characters
     const suffix = address.slice(-8); // Last 8 characters
-    return `CA: ${prefix}....${suffix}`;
+    return `${prefix}....${suffix}`;
   };
   if (botMsg?.AIresponse === "") {
     return (
