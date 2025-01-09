@@ -639,7 +639,7 @@ function MsgContainer({
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full  gap-3   flex items-center justify-center"
+        className="w-full  gap-3   flex items-center justify-center lg:justify-end"
       >
         {botMsg?.socialsData?.imageUrl && (
           <div className="w-[35px] lg:w-[55px] p-1 rounded-full aspect-square bg-white/25  flex items-center justify-center ">
