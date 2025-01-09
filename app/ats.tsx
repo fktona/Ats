@@ -639,15 +639,26 @@ function MsgContainer({
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full flex gap-3 items-start justify-end"
+        className="w-full  gap-3   flex items-center justify-center"
       >
+        {botMsg?.socialsData?.imageUrl && (
+          <div className="w-[35px] lg:w-[55px] p-1 rounded-full aspect-square bg-white/25  flex items-center justify-center ">
+            <Image
+              alt="logo"
+              src={botMsg?.socialsData?.imageUrl}
+              width={50}
+              height={50}
+              className="rounded-full"
+            />
+          </div>
+        )}
         <motion.div
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.3 }}
           className="w-fit bg-white/5 p-4 rounded-s-full rounded-tr-full border border-white/5 overflow-hidden break-words max-w-full"
         >
-          <span className="text-white/90 text-sm break-words leading-relaxed">
+          <span className="text-white/90 md:text-sm text-[10px]  break-words leading-relaxed">
             {userMsg}
           </span>
         </motion.div>
