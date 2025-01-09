@@ -80,13 +80,20 @@ export default function Navbar({
             asChild
             className="bg-white/20 p-2 rounded-full z-20 relative cursor-pointer hover:bg-white/30 transition-colors duration-150"
           >
-            <Image
-              alt="pump fun"
-              src="/pump.svg"
-              width={25}
-              height={25}
-              className="w-8 h-8 relative cusor-pointer"
-            />
+            <a
+              href={
+                "https://pump.fun/coin/ExCedGq3QtqWZ2Gjjjxqy4GRXBdtf2MmGebnr3Tnpump"
+              }
+              target="_blank"
+            >
+              <Image
+                alt="pump fun"
+                src="/pump.svg"
+                width={25}
+                height={25}
+                className="w-8 h-8 relative cusor-pointer"
+              />
+            </a>
           </Button>
         </div>
       </div>
