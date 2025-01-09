@@ -55,7 +55,7 @@ export default function Sidebar({
 
 export const About = () => {
   return (
-    <div className="flex relative flex-col gap-4 w-full min-w-[286px] px-[16px] py-[10px] rounded-md bg-[#1B1F27]">
+    <div className="flex relative flex-col gap-4 w-full min-w-[286px] px-[16px] py-[10px]  text-white rounded-md bg-[#1B1F27]">
       <h2 className="text-[#D6FF00] text-[18px] md:text-[22px] font-inter font-bold">
         About ATS
       </h2>
@@ -73,7 +73,7 @@ export const About = () => {
 
 export const RoadMap = () => {
   return (
-    <div className="flex relative flex-col gap-4 w-full px-[16px] min-w-[286px] py-[10px] rounded-md bg-[#1B1F27]">
+    <div className="flex relative flex-col gap-4 w-full px-[16px] min-w-[286px]  text-white py-[10px] rounded-md bg-[#1B1F27]">
       <h2 className="text-[#D6FF00] text-[18px] md:text-[22px] font-inter font-bold">
         Roadmap
       </h2>

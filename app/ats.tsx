@@ -367,7 +367,7 @@ function MsgContainer({
       exit={{ opacity: 0, y: -20 }}
       ref={ref}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="w-full flex flex-col-reverse md:max-w-[90%] mx-auto gap-6 md:px-4 py-6 pb-20"
+      className="w-full flex flex-col-reverse md:max-w-[90%] text-white mx-auto gap-6 md:px-4 py-6 pb-20"
     >
       <motion.div
         initial={{ opacity: 0, x: -20 }}
